@@ -1,9 +1,9 @@
 FROM debian:buster
 LABEL maintainer="Víctor Cuadrado Juan"
-ENV DEBIAN_FRONTEND noninteractive # Install dependencies.
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-       sudo systemd ansible \
+       sudo systemd ansible ansible-lint\
     && rm -rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
